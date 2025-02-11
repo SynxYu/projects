@@ -7,8 +7,23 @@
 <html>
 	<head>
 		<style>
+			* {
+				box-sizing: boarder-box;
+			}
 			section {
 				text-align: center 
+			}
+
+			.column {
+  				float: left;
+  				width: 33.33%;
+  				padding: 5px;
+			}
+
+			.row::after {
+  				content: "";
+  				clear: both;
+  				display: table;
 			}
 		</style>
 		<title>Ivan Shaos</title>
@@ -48,12 +63,46 @@
 									<h1 style="margin:0%">Ivan Shao</h1>
 								</header>
 								<div class="image main; center">
-									<img src="images/profile_pic.png" alt="" style="width:400px; height:auto"/>
+									<img src="images/profile_pic.png" alt="" style="width:350px; height:auto"/>
 								</div>
-								<p>Greetings! My name</p>
-								<p>I have a </p>
-							</section>
+								<p>
+									Greetings! I'm Ivan Shao, a University of Toronto graduate (November 2022) with a double major in Computer Science and Economics. During my studies, I completed two Analyst Co-op terms at CRA (8 months) and MTO (4 months), where I honed my technical skills in SQL, Excel, VBA, Python (Pandas & NumPy), and PowerBI. Additionally, I developed valuable interpersonal skills, including Professional Communication and Teamwork. In my free time, I continue to improve these technical proficiencies to stay up to date.
+								</p>
+								<p>
+									I am an organized and analytical individual with a strong appreciation for structure and beauty.
+									I find deep satisfaction in transforming complex, unstructured data into clean, insightful information and crafting compelling data visualizations. My passion for uncovering meaningful patterns and insights through data analysis makes a career in this field a great fit for me, and I am confident my skills make me an excellent fit for it.
+								</p>
 
+								<!-- <p>
+									After graduation, I initially pursued a career with the Canadian Armed Forces (CAF) as an IT-related Officer, drawn to their values of Discipline, Orderliness, and Fitness, which aligned with my personal principles. However, during basic training, I realized that the heavy emphasis on Uniformity wasn't the right fit for me. This realization led me to leave the military and reignited my passion for Data Analytics, where I can uncover meaningful patterns and insights. I am confident my skills make me an excellent fit for this field.
+								</p> -->
+
+								<p>
+									Outside of work, I enjoy exercising, listening to music, reading, travelling, and cooking. Recently, I've developed a new interest in watching K-dramas. <span>&#128522;</span>
+								</p>
+								
+								<div class="row">
+									<div class="column">
+										<img src="images/physique.jpg" alt="posing" style="width:310px; height:auto; display: inline-block"/>
+									</div>
+									<div class="column">
+										<img src="images/sunset.jpg" alt="sunset" style="width:400px; height:auto; display: inline-block"/>
+									</div>
+									<div class="column">
+										<img src="images/quote2.jpg" alt="quote" style="width:420px; height:auto; display: inline-block"/>
+									</div>
+									<div class="column">
+										<img src="images/steak.jpg" alt="steak" style="width:330px; height:auto; display: inline-block"/>
+									</div>
+									<div class="column">
+										<img src="images/pork1.jpg" alt="pork" style="width:330px; height:auto; display: inline-block"/>
+									</div>
+									<div class="column">
+										<img src="images/pork2.jpg" alt="pork" style="width:330px; height:auto; display: inline-block"/>
+									</div>
+								</div>
+
+							</section>
 					</div>
 
 				<!-- Footer -->
