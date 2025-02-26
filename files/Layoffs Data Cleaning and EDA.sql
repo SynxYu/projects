@@ -1,5 +1,31 @@
-/* First we create a working table from the raw table so that raw data is untouched */
+/*
+Exploratory Analysis of 2020 - 2023 Layoffs Data
 
+Data obtained from: https://www.kaggle.com/datasets/swaptr/layoffs-2022/code
+
+Goal: 
+To gain an understanding of global layoff patterns during 2020 - 2023, analyzing
+the market impacts of COVID-19, identifying the most affected industries, and 
+tracking the accumulated impact over time.
+      
+Steps to take: 
+1. Clean the data in preparation for analysis.
+2. Perform exploratory data analysis on cleansed data.
+       
+Limitations: 
+The dataset has missing values for the number of employees laid off and layoff 
+percentages for some companies. Additionally, it contains a disproportionately 
+higher volume of US company data compared to other countries, which would skew 
+the results, making it appear as though other countries were significantly less 
+impacted than the US.
+This discrepancy may stem from data collection being primarily conducted in the 
+US, making it easier to gather US-based data than data from other countries. 
+To improve accuracy, we could expand the project's scope and incorporate a more 
+diverse set of data collection tools, ensuring better representation of companies 
+from different regions.
+*/
+
+/* First we create a working table from the raw table so that raw data is untouched */
 DROP TABLE IF EXISTS layoffs;
 
 CREATE TABLE layoffs
@@ -109,10 +135,15 @@ FROM layoffs
 WHERE total_laid_off IS NULL
 AND percentage_laid_off IS NULL;
 
-
 /* =========================
   Exploratory Data Analysis 
  ========================= */
+
+/* Total number of layoffs by country */
+SELECT country, SUM(total_laid_off) AS sum_total_laid_off
+FROM layoffs
+GROUP BY country
+ORDER BY sum_total_laid_off DESC;
 
 /* Check companies that laid off all employees(bankrupt) */
 SELECT DISTINCT *
@@ -168,6 +199,3 @@ company_year_rank AS (
 SELECT *
 FROM company_year_rank
 WHERE ranking <= 5; -- Check the top 5 companies each year
-
-
-
